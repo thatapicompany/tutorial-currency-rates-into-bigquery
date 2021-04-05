@@ -1,6 +1,6 @@
 variable "project" {
   type    = string
-  default = "landmarks-datalake"
+  default = "YOUR-GCP-PROJECT-ID"
 }
 
 variable "location" {
@@ -19,7 +19,7 @@ variable "product" {
 
 variable "OPENEXCHANGERATES_KEY" {
   type    = string
-  default = "a418ccd747424498b587ad3176b598fe"
+  default = "YOUR-OPENEXCHANGERATES-APP-ID"
 }
 
 variable "BASE_CURRENCY" {
