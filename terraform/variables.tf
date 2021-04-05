@@ -1,16 +1,16 @@
 variable "project" {
   type    = string
-  default = "YOUR-GCP-PROJECT"
+  default = "landmarks-datalake"
 }
 
 variable "location" {
   type    = string
-  default = "us-central1"
+  default = "australia-southeast1"
 }
 
 variable "dataset" {
   type    = string
-  default = "currency_codes"
+  default = "currency_rates"
 }
 variable "product" {
   type    = string
@@ -19,7 +19,7 @@ variable "product" {
 
 variable "OPENEXCHANGERATES_KEY" {
   type    = string
-  default = "YOUR-OPENEXCHANGERATES-APP-ID"
+  default = "a418ccd747424498b587ad3176b598fe"
 }
 
 variable "BASE_CURRENCY" {

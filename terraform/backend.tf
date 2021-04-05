@@ -1,7 +1,7 @@
 terraform {
     backend "gcs" {
     bucket      = "YOUR-EXISTING-BUCKET"
-    prefix  = var.product + "/state"
-    credentials = "./serviceaccount.json"
+    prefix  = "currency-rates/state"
+    //credentials = "./serviceaccount.json"  // uncomment if using local creds
   }
 }

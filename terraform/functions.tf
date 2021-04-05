@@ -39,19 +39,19 @@ resource "google_cloudfunctions_function" "get_currency_rates_function" {
 }
 
 resource "google_service_account" "service_account" {
-  account_id   = "cloud-function-invoker"
-  display_name = "Cloud Function Tutorial Invoker Service Account"
+  account_id   = "currency-rates-invoker"
+  display_name = "Get Currency Rates Invoker Service Account"
 }
 
 resource "google_cloudfunctions_function_iam_member" "invoker" {
-  project        = google_cloudfunctions_function.function.project
-  region         = google_cloudfunctions_function.function.region
-  cloud_function = google_cloudfunctions_function.function.name
+  project        = google_cloudfunctions_function.get_currency_rates_function.project
+  region         = google_cloudfunctions_function.get_currency_rates_function.region
+  cloud_function = google_cloudfunctions_function.get_currency_rates_function.name
 
   role   = "roles/cloudfunctions.invoker"
   member = "serviceAccount:${google_service_account.service_account.email}"
 }
 
 output "function_url" {
-  value = "${google_cloudfunctions_function.function.https_trigger_url}"
+  value = "${google_cloudfunctions_function.get_currency_rates_function.https_trigger_url}"
 }

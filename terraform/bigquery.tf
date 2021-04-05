@@ -7,7 +7,7 @@ resource "google_bigquery_dataset" "dataset" {
   description   = "Holds all currency rate data"
   friendly_name = var.dataset
   location      = var.location
-  depends_on    = [google_project_service.bigquery-json, google_project_service.bigquerystorage]
+  //depends_on    = [google_project_service.bigquery-json, google_project_service.bigquerystorage]
 }
 
 
@@ -26,6 +26,8 @@ resource "google_bigquery_table" "openexchangerates_responses" {
   labels = {
     product: var.product
   }
+
+  depends_on = [google_bigquery_dataset.dataset]
 }
 
 resource "google_bigquery_table" "latest_currency_rates" {
@@ -37,5 +39,5 @@ resource "google_bigquery_table" "latest_currency_rates" {
     use_legacy_sql = "false"
   }
 
-  depends_on = [google_bigquery_dataset.dataset]
+  depends_on = [google_bigquery_dataset.dataset, google_bigquery_table.openexchangerates_responses]
 }
