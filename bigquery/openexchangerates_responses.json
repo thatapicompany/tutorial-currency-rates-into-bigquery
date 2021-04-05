@@ -1,0 +1,13 @@
+[
+    {
+        "name": "data",
+        "type": "STRING",
+        "mode": "REQUIRED",
+        "description":"Response JSON from OpenExchangeRates API"
+    },{
+        "name": "timestamp",
+        "type": "TIMESTAMP",
+        "mode": "REQUIRED",
+        "description":"Timestamp of when the API response was created"
+    }
+]
