@@ -9,4 +9,10 @@ Step by Step guide how to add each piece via the Google Cloud Console:
 I'm assuming you're already fluent with Terraform.
 
 - Update the "backend.tf" with the name of one of your GCS buckets to hold the state. This is better practice than holding it locally.
-- 
+- Update the "variables.tf" with your GCP Project-ID and OpenExchangeRate App-ID
+
+```bash
+cd terraform
+terraform init
+terraform apply
+```
